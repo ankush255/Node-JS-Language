@@ -1,47 +1,57 @@
-const sum = (a,b)=>{
-    return a + b;
-}
+// 1
 
-// console.log(sum(2,6));              // 8
+// const sum = (a,b)=>{
+//     return a + b;
+// }
 
-exports.sum = sum;
+// // console.log(sum(2,6));              // 8
 
-
-
-
+// exports.sum = sum;
 
 
-exports.man =(a,b)=>{
-    return a + b;
-}
+
+
+
+
+// // 2
+
+// exports.dife =(a,b)=>{
+//     return a-b;
+// }
+
+
+// exports.man =(a,b)=>{
+//     return a + b;
+// }
 
 // console.log(man(10,8));             // 18
 
-
-
-
-
-// function dif (a,b){
-//     return a-b;
+// exports.multi=(s,v)=>{
+//     return s*v;
 // }
-// console.log(dif(3,8));              // -5
 
-exports.dife =(a,b)=>{
+
+
+
+
+
+
+// 3
+
+
+function mul(s,v){
+    return s*v;
+}
+
+function dif(a,b){
     return a-b;
 }
 
+// console.log(dif(3,8));              // -5
 
 
-// function mul(s,v){
-//     return s*v;
-// }
+
 // console.log(mul(7,7));             // 49
 
-exports.multi=(s,v)=>{
-        return s*v;
-    }
 
-
-
-
-// export {mul,dif};
+export {mul,dif};
