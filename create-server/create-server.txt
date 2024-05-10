@@ -1,0 +1,11 @@
+open terminal
+
+
+index.js file create  ..
+
+
+npm init -y   => package.json  ( Not Delete )
+
+npm i         => node_modules Folder create 
+
+npm i nodemon => node_modules and package-lock.json create
