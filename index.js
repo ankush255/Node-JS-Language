@@ -9,7 +9,10 @@ const fs = require('fs');
 
 
 //   //  => JSON Read
-const readData = fs.readFileSync('product.json','utf-8')
+// const readData = fs.readFileSync('product.json','utf-8')
+
+const readData = fs.readFileSync('user.json','utf-8')
+
 
 
 
