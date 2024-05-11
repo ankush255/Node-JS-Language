@@ -1,6 +1,10 @@
 open terminal
 
 
+=> Start Server :=: npm server start
+
+
+
 index.js file create  ..
 
 
