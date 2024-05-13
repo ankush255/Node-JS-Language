@@ -2,6 +2,7 @@ open terminal
 
 
 => Start Server :=: npm server start
+                    npm run start 
 
 
 
