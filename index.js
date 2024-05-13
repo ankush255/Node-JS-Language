@@ -40,21 +40,46 @@ const server = http.createServer((req,res)=>{
     // res.end(readData);
 
 
-    if(req.url.startsWith("/html"))
-    {
-        res.setHeader('Content-Type','text/html');
-        res.end('<h1> Hello </h1>');
-    }
-        else if (req.url.startsWith("/json"))
-        {
+
+
+
+    //  // if - else 
+
+    // if(req.url.startsWith("/html"))
+    // {
+        // res.setHeader('Content-Type','text/html');
+        // res.end('<h1> Hello </h1>');
+    // }
+    //     else if (req.url.startsWith("/json"))
+    //     {
+    //         res.setHeader('Content-Type','application/json');
+    //         res.end(JSON.stringify(readData));
+    //     }
+    //     else {
+    //         res.end('Byy Byy');
+    //     }
+
+
+
+
+
+    // // switch case
+    switch (req.url) {
+        case '/html' :
+            res.setHeader('Content-Type','text/html');
+            res.end('<h1> Hello </h1>');
+            break;
+
+        case '/json' :
             res.setHeader('Content-Type','application/json');
             res.end(JSON.stringify(readData));
-        }
-        else {
+            break;
+    
+        default:
             res.end('Byy Byy');
-        }
-
-})
+            break;
+    }
+});
 
 
 
