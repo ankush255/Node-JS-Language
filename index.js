@@ -45,7 +45,7 @@ const server = http.createServer((req,res)=>{
         res.setHeader('Content-Type','text/html');
         res.end('<h1> Hello </h1>');
     }
-        else if (req.url.startsWith("/demo"))
+        else if (req.url.startsWith("/json"))
         {
             res.setHeader('Content-Type','application/json');
             res.end(JSON.stringify(readData));
