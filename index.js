@@ -1,7 +1,7 @@
 const http = require('http');
 
 
-// const fs = require('fs');
+const fs = require('fs');
 
 
 //   //  => HTML Read
@@ -14,7 +14,7 @@ const http = require('http');
 // const readData = fs.readFileSync('user.json','utf-8')
 
 
-
+const readData = require("./product.json");
 
 
 
@@ -28,7 +28,7 @@ const server = http.createServer((req,res)=>{
 
     //  // HTML
     // res.setHeader('Content-Type','text/html');
-    res.end('<h1> Hello </h1>');
+    // res.end('<h1> Hello </h1>');
 
 
     //  // JSON
@@ -39,7 +39,25 @@ const server = http.createServer((req,res)=>{
 
     // res.end(readData);
 
+
+    if(req.url.startsWith("/html"))
+    {
+        res.setHeader('Content-Type','text/html');
+        res.end('<h1> Hello </h1>');
+    }
+        else if (req.url.startsWith("/demo"))
+        {
+            res.setHeader('Content-Type','application/json');
+            res.end(JSON.stringify(readData));
+        }
+        else {
+            res.end('Byy Byy');
+        }
+
 })
+
+
+
 
 server.listen(1090);
 
@@ -53,72 +71,72 @@ server.listen(1090);
 
 // //    1
 
-const serve = http.createServer();
+// const serve = http.createServer();
 
-serve.on('request',(req,res)=>{
-    res.end('<h1> Ankush </h1>');
-})
+// serve.on('request',(req,res)=>{
+//     res.end('<h1> Ankush </h1>');
+// })
 
-serve.listen(2555,()=>{
-    console.log('server created')
-});
-
-
-
-
-// //   2
-
-const sever = http.createServer();
-
-sever.on('request',(req,res)=>{
-    res.end('<h1> Thummar </h1>');
-})
-
-sever.listen(1234,()=>{
-    console.log('server created')
-});
+// serve.listen(2555,()=>{
+//     console.log('server created')
+// });
 
 
 
 
-// //   3
+// // //   2
 
-const se = http.createServer();
+// const sever = http.createServer();
 
-se.on('request',(req,res)=>{
-    res.end('<h1> Patel </h1>');
-})
+// sever.on('request',(req,res)=>{
+//     res.end('<h1> Thummar </h1>');
+// })
 
-se.listen(1111,()=>{
-    console.log('server created')
-});
-
-
-
-
-// //   4
-
-const ever = http.createServer();
-
-ever.on('request',(req,res)=>{
-    res.end('<h1> Big </h1>');
-})
-
-ever.listen(4567,()=>{
-    console.log('server created')
-});
+// sever.listen(1234,()=>{
+//     console.log('server created')
+// });
 
 
 
 
-// //   5
+// // //   3
 
-const sevr = http.createServer();
+// const se = http.createServer();
 
-sevr.on('request',(req,res)=>{
-    res.end('<h1> Small </h1>');
-})
+// se.on('request',(req,res)=>{
+//     res.end('<h1> Patel </h1>');
+// })
 
-sevr.listen(8989,()=>{
-    console.log('server created')
-});
+// se.listen(1111,()=>{
+//     console.log('server created')
+// });
+
+
+
+
+// // //   4
+
+// const ever = http.createServer();
+
+// ever.on('request',(req,res)=>{
+//     res.end('<h1> Big </h1>');
+// })
+
+// ever.listen(4567,()=>{
+//     console.log('server created')
+// });
+
+
+
+
+// // //   5
+
+// const sevr = http.createServer();
+
+// sevr.on('request',(req,res)=>{
+//     res.end('<h1> Small </h1>');
+// })
+
+// sevr.listen(8989,()=>{
+//     console.log('server created')
+// });
