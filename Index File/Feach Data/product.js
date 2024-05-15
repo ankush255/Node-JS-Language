@@ -4,7 +4,7 @@ const fs = require("fs");
 
 
 
-const read = fs.readFileSync("index.html", "utf-8");
+const read = fs.readFileSync("product.html", "utf-8");
 
 
 
