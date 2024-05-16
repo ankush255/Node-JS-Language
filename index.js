@@ -8,15 +8,15 @@ const read = fs.readFileSync("index.html", "utf-8");
 
 //   //  => JSON Read
 const readData = JSON.parse(fs.readFileSync("product.json", "utf-8"));
-const readUserJsonData = JSON.parse(fs.readFileSync('user.json','utf-8'));
+// const readUserJsonData = JSON.parse(fs.readFileSync('user.json','utf-8'));
 // const readData = require("./product.json");
 
 //  // JSON Conect
 
 // const products = readData.products[0];
-// const products = readData.products;
-const user = readUserJsonData.users;
-console.log(user);
+const products = readData.products;
+// const user = readUserJsonData.users;
+// console.log(user);
 // console.log(products);
 
 // const data = {
@@ -52,41 +52,42 @@ const server = http.createServer((req, res) => {
   //         res.end('Byy Byy');
   //     }
 
-//   if (req.url.startsWith("/product")) {
-//     console.log(req.url.split("/")[2]);
-
-//     const id1 = req.url.split("/")[2];
-//     const product1 = products.find((p) => p.id === +id1);
-//     // console.log(product1);
-
-//     res.setHeader("Content-Type", "text/html");
-//     const modifydata = read
-//       .replace("**title**", product1.title)
-//       .replace("**description**", product1.description)
-//       .replace("**thumbnail**", product1.thumbnail);
-//     console.log(modifydata);
-//     res.end(modifydata);
-
-//     return;
-    
-//   }else
- if(req.url.startsWith("/user"))
-    {
+  if (req.url.startsWith("/product")) {
     console.log(req.url.split("/")[2]);
 
-    const id2 = req.url.split("/")[2];
-    const user1 = user.find((u) => u.id === (+id2));
-    // console.log(user1);
+    const id1 = req.url.split("/")[2];
+    const product1 = products.find((p) => p.id === +id1);
+    // console.log(product1);
 
-    const modifydata1 = read
-      .replace("**age**", user1.age)
-      .replace("**firstName**", user1.firstName)
-      .replace("**image**", user1.image);
-    console.log(modifydata1);
-    res.end(modifydata1);
+    res.setHeader("Content-Type", "text/html");
+    const modifydata = read
+      .replace("**title**", product1.title)
+      .replace("**description**", product1.description)
+      .replace("**thumbnail**", product1.thumbnail);
+    console.log(modifydata);
+    res.end(modifydata);
+
     return;
-
+    
   }
+//   else
+//  if(req.url.startsWith("/user"))
+//     {
+//     console.log(req.url.split("/")[2]);
+
+//     const id2 = req.url.split("/")[2];
+//     const user1 = user.find((u) => u.id === (+id2));
+//     // console.log(user1);
+
+//     const modifydata1 = read
+//       .replace("**age**", user1.age)
+//       .replace("**firstName**", user1.firstName)
+//       .replace("**image**", user1.image);
+//     console.log(modifydata1);
+//     res.end(modifydata1);
+//     return;
+
+//   }
 
   // // switch case
   switch (req.url) {
