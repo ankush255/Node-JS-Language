@@ -9,7 +9,7 @@ open terminal
 index.js file create  ..
 
 
-npm init -y   => package.json  ( Not Delete )
+npm init -y  / npm init => package.json  ( Not Delete )
 
 npm i         => node_modules Folder create 
 
