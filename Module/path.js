@@ -16,13 +16,19 @@ const path = require('path');
 // console.log(path.dirname('D:/user/hello.txt'));                             // D:/user
 
 
-console.log(path.relative(__dirname));
+console.log(path.relative(__filename,"./path.js"));
 
 
 // console.log(path.extname('D:/user/hello.txt'));                             // .txt
 
 
-console.log(path.format(__filename));
+// console.log(path.format({
+//     root: 'D:/',
+//     dir: 'D:/user',
+//     base: 'hello.txt',
+//     ext: '.txt',
+//     name: 'hello'
+//   }));                                                                          //  D:/user\hello.txt
 
 
 // console.log(path.isAbsolute('D:/user/hello.txt'));                            // true
@@ -41,11 +47,10 @@ console.log(path.format(__filename));
 //   }
 
 
-console.log(path.relative('D:/user/hello.txt'));
-
 
 // console.log(path.toNamespacedPath('D:/user/hello.txt'));            // \\?\D:\user\hello.txt
-
+// console.log(path.toNamespacedPath(__dirname));                      // \\?\C:\ankush\Node JS Language\Node JS\Module
+// console.log(path.toNamespacedPath(__filename));                     // \\?\C:\ankush\Node JS Language\Node JS\Module\path.js
 
 
 

@@ -128,7 +128,8 @@ const os = require('os');
 // console.log(os.release());                          // 10.0.22631
 
 
-console.log(os.setPriority());
+// os.setPriority(11)
+// console.log("this: ",os.getPriority());                // this:  10
 
 
 // console.log(os.totalmem());                           // 8462270464
